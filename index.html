@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>💖 Özel Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGO -->
+    <div class="logo">💖 SENİN İÇİN</div>
+
+    <!-- MENÜ -->
+    <div class="menu">
+        <button onclick="openSection('siir')">💌 Şiir</button>
+        <button onclick="openSection('sarki')">🎵 Şarkı</button>
+        <button onclick="openSection('ani')">📸 Anılar</button>
+    </div>
+
+    <!-- ŞİİR SECTION -->
+    <div id="siir" class="section">
+
+        <h2>💌 Şiir</h2>
+
+        <!-- 📸 FOTO ALANI -->
+        <div id="photoContainer" class="photo-container"></div>
+
+        <p id="siirText">Butona bas :)</p>
+
+        <button id="newPoet" onclick="randomSiir()">Yeni Şiir</button>
+
+    </div>
+
+    <!-- ŞARKI SECTION -->
+    <div id="sarki" class="section hidden">
+    <div class="player-container">
+        <!-- Şarkı Bilgisi -->
+        <h2 id="songTitle">Şarkı Yükleniyor...</h2>
+        <p id="songArtist" style="color: #ffb6c1; font-weight: bold;">Sanatçı</p>
+
+        <!-- Gizli Ses Oynatıcı -->
+        <audio id="myAudio"></audio>
+
+        <!-- Kontrol Butonları -->
+        <div class="controls">
+            <button onclick="prevSong()">⏮️</button>
+            <button id="playBtn" onclick="togglePlay()" style="font-size: 30px;">▶️</button>
+            <button onclick="nextSong()">⏭️</button>
+        </div>
+
+        <!-- Spotify Tarzı Söz Alanı -->
+        <div id="lyricsContainer" class="lyrics-container">
+            <!-- Sözler JS ile buraya dolacak -->
+        </div>
+    </div>
+</div>
+
+    
+    <!-- ANILAR SECTION -->
+<div id="ani" class="section hidden">
+    <div class="memory-wrapper">
+        <!-- Sol Buton -->
+        <button class="nav-btn" onclick="changeMemory(-1)">❮</button>
+        
+        <!-- Ortadaki Fotoğraf Kartı -->
+        <div class="polaroid">
+            <img id="memoryImg" src="" alt="Anı">
+            <p id="memoryCaption" class="caption"></p>
+        </div>
+
+        <!-- Sağ Buton -->
+        <button class="nav-btn" onclick="changeMemory(1)">❯</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
